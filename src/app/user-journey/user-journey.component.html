@@ -1,0 +1,9 @@
+<div *ngIf="step === 'user'">
+  <app-user-details [user]="loanRequest.user" (next)="next()"/>
+</div>
+<div *ngIf="step === 'loan-detail'">
+  <app-loan-details [loanDetail]="loanRequest.loanDetail" (submit)="submit()"/>
+</div>
+<div *ngIf="lender_details_and_pricing !== null">
+  <div *ngFor="let lender of lender_details_and_pricing"> {{ lender | json }}</div>
+</div>

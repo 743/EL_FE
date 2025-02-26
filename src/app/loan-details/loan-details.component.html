@@ -1,0 +1,35 @@
+<div>
+    <div>
+      <h1>Loan details info</h1>
+      <h2>Share loan details.</h2>
+    </div>
+    <div>
+      <div>
+        <div>
+          <label for="vehiclePrice">Vehicle price</label>
+        </div>
+        <input type="text" id="vehiclePrice" [(ngModel)]="loanDetail.vehiclePrice" required  pattern="[0-9]"/>
+      </div>
+      <div>
+        <div>
+          <label for="deposit">Deposit</label>
+        </div>
+        <input type="text" id="deposit" [(ngModel)]="loanDetail.deposit" required pattern="[0-9]"/>
+      </div>
+      <div>
+        <div>
+          <label for="purpose">Loan Purpose</label>
+        </div>
+        <input type="text" id="purpose" [(ngModel)]="loanDetail.purpose" required maxlength="255"/>
+      </div>
+      <div>
+        <div>
+          <label for="term">Loan Term</label>
+        </div>
+        <input type="text" id="term" [(ngModel)]="loanDetail.term" required pattern="[0-9]" min="1" max="7"/>
+      </div>
+    <div>
+      <button (click)="onSubmit()" [disabled]="!isValid()">Submit</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<div>
+  <div>
+    <h1>Personal info</h1>
+    <h2>Please provide your name, email address, and employment details.</h2>
+  </div>
+  <div>
+    <div>
+      <div>
+        <label for="firstName">First name</label>
+      </div>
+      <input type="text" id="firstName" [(ngModel)]="user.firstName" required maxlength="255"/>
+    </div>
+    <div>
+      <div>
+        <label for="lastName">Last name</label>
+      </div>
+      <input type="text" id="lastName" [(ngModel)]="user.lastName" required maxlength="255"/>
+    </div>
+    <div>
+      <div>
+        <label for="email">Email</label>
+      </div>
+      <input type="text" id="email" [(ngModel)]="user.email" required maxlength="255"/>
+    </div>
+    <div>
+      <div>
+        <label for="employmentStatus">Employment status</label>
+      </div>
+      <select id="employmentStatus" [(ngModel)]="user.employmentStatus">
+        <option *ngFor="let x of employmentStatuses" [ngValue]="x">{{x}}</option>
+      </select>
+    </div>
+    <div *ngIf="user.employmentStatus === 'Employed' || user.employmentStatus === 'Self-Employed'">
+      <div>
+        <label for="employerName">Employer name</label>
+      </div>
+    <input type="text" id="employerName" [(ngModel)]="user.employerName"/>
+  </div>
+  <div>
+    <button (click)="onNext()" [disabled]="!isValid()">Next</button>
+  </div>
+</div>
