@@ -12,3 +12,7 @@ ng serve --port 8081
 
 Once the server is running, open your browser and navigate to `http://localhost:8081/`. 
 
+To run test, run rollowing command:
+```bash
+ng test --browsers ChromeHeadless --watch=false
+```
